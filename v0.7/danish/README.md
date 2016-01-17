@@ -11,7 +11,7 @@ Run
 
 and finally
 
-    docker run -i -p 2240:80 danish_spotlight
+    docker run -i -p 2240:80 danish_spotlight spotlight.sh
 
 
 
