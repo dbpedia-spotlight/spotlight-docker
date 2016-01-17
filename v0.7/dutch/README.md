@@ -10,6 +10,6 @@ Run
 
 and finally
 
-    docker run -i -p 2232:80 --name dutch_spotlight dutch_spotlight
+    docker run -i -p 2232:80 dutch_spotlight spotlight.sh
 
 
