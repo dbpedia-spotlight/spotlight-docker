@@ -10,6 +10,6 @@ Run
 
 and finally
 
-    docker run -d -p 2230:80 italian_spotlight
+    docker run -d -p 2230:80 italian_spotlight spotlight.sh
 
 
