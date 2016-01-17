@@ -10,6 +10,6 @@ Run
 
 And finally
 
-    docker run -i -p 2231:80 spanish_spotlight
+    docker run -i -p 2231:80 spanish_spotlight spotlight.sh
 
 
