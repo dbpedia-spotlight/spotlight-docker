@@ -10,6 +10,6 @@ Run
 
 and finally
 
-    docker run -d -p 2225:80 --name french_spotlight french_spotlight
+    docker run -d -p 2225:80 french_spotlight spotlight.sh
 
 
