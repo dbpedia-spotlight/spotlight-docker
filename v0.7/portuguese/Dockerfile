@@ -8,12 +8,12 @@ RUN apt-get update && apt-get install -y \
 
 ENV RELEASE_SERVER    spotlight.sztaki.hu
 ENV RELEASE_FILENAME  dbpedia-spotlight-0.7.jar
-ENV LANGUAGE_MODEL    latest_models/pt.tar.gz	   
+ENV LANGUAGE_MODEL    pt.tar.gz	   
 
 RUN mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
     curl -O "http://$RELEASE_SERVER/downloads/$RELEASE_FILENAME" && \
-    curl -O "http://$RELEASE_SERVER/downloads/$LANGUAGE_MODEL" && \
+    curl -O "http://$RELEASE_SERVER/downloads/latest_models/$LANGUAGE_MODEL" && \
     tar xvf $LANGUAGE_MODEL  && \
     rm  $LANGUAGE_MODEL
 
