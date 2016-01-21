@@ -13,15 +13,15 @@
 
 * Dutch      - ```docker run -i -p 2232:80 dbpedia/spotligth-dutch spotlight.sh```
 
-* English    - ```docker run -d -p 2222:80 dbpedia/spotligth-english spotlight.sh```
+* English    - ```docker run -i -p 2222:80 dbpedia/spotligth-english spotlight.sh```
 
-* French     - ```docker run -d -p 2225:80 dbpedia/spotligth-french spotlight.sh```
+* French     - ```docker run -i -p 2225:80 dbpedia/spotligth-french spotlight.sh```
 
-* German     - ```docker run -d -p 2226:80 dbpedia/spotligth-german spotlight.sh```
+* German     - ```docker run -i -p 2226:80 dbpedia/spotligth-german spotlight.sh```
 
 * Hungarian  - ```docker run -i -p 2229:80 dbpedia/spotligth-hungarian spotlight.sh```
 
-* Italian    - ```docker run -d -p 2230:80 dbpedia/spotligth-italian spotlight.sh```
+* Italian    - ```docker run -i -p 2230:80 dbpedia/spotligth-italian spotlight.sh```
 
 * Portuguese - ```docker run -i -p 2228:80 dbpedia/spotligth-portuguese spotlight.sh```
 
