@@ -1,7 +1,7 @@
 ## Supported tags and respective Dockerfile links
 * v0.7, latest 
 
-##What is DBpedia Spotlight?
+## What is DBpedia Spotlight?
 
 [DBpedia Spotlight](http://wikipedia.org/wiki/DBpedia#DBpedia_Spotlight) is a tool for automatically annotating mentions of DBpedia resources in text, providing a solution for linking unstructured information sources to the Linked Open Data cloud through DBpedia.
 
