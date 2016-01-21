@@ -10,6 +10,6 @@ Run
 
 and finally
 
-    docker run -d -p 2226:80 german_spotlight spotlight.sh
+    docker run -i -p 2226:80 german_spotlight spotlight.sh
 
 

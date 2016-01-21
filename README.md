@@ -1,4 +1,4 @@
-##Supported tags and respective Dockerfile links
+## Supported tags and respective Dockerfile links
 * v0.7, latest 
 
 ##What is DBpedia Spotlight?
@@ -25,24 +25,30 @@
 
 * Portuguese - ```docker run -i -p 2228:80 dbpedia/spotligth-portuguese spotlight.sh```
 
+* Russian    - ```docker run -i -p 2227:80 dbpedia/spotligth-rusian spotlight.sh```
+
 * Spanish    - ```docker run -i -p 2231:80 dbpedia/spotligth-spanish spotlight.sh```
 
+* Swedish    - ```docker run -i -p 2241:80 dbpedia/spotligth-swedish spotlight.sh```
+
+* Turkish    - ```docker run -i -p 2235:80 dbpedia/spotligth-turkish spotlight.sh```
 
 
-##Supported Docker versions
+
+## Supported Docker versions
 This image is officially supported on Docker version 1.9.1.
 
 Please see the [Docker installation documentation] (https://docs.docker.com/installation/) for details on how to upgrade your Docker daemon.
 
-##Documentation
+## Documentation
 
 Documentation for this image is stored in [GitHub repo](http://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki).
 
-##Issues
+## Issues
 If you have any problems with or questions about this image, please contact us through a [GitHub issue](http://github.com/dbpedia-spotlight/dbpedia-spotlight/issues).
 
 
-##Contributing
+## Contributing
 
 First of all, thank you for helping! :) .
 

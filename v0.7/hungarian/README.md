@@ -1,4 +1,4 @@
-Docker container image with [DBpedia Spotlight in Hugarian](http://github.com/dbpedia-spotlight/) 
+Docker container image with [DBpedia Spotlight in Hungarian](http://github.com/dbpedia-spotlight/) 
 
 ### How to run
 
