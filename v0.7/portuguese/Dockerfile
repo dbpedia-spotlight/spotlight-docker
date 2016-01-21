@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 ENV RELEASE_SERVER    spotlight.sztaki.hu
 ENV RELEASE_FILENAME  dbpedia-spotlight-0.7.jar
-ENV LANGUAGE_MODEL    pt.tar.gz	   
+ENV LANGUAGE_MODEL    latest_models/pt.tar.gz	   
 
 RUN mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
