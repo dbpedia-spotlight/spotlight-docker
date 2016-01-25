@@ -9,29 +9,29 @@
 
 ## How to run
 
-* Danish     - ```docker run -i -p 2240:80 dbpedia/spotligth-danish spotlight.sh```
+* Danish     - ```docker run -i -p 2240:80 dbpedia/spotlight-danish spotlight.sh```
 
-* Dutch      - ```docker run -i -p 2232:80 dbpedia/spotligth-dutch spotlight.sh```
+* Dutch      - ```docker run -i -p 2232:80 dbpedia/spotlight-dutch spotlight.sh```
 
-* English    - ```docker run -i -p 2222:80 dbpedia/spotligth-english spotlight.sh```
+* English    - ```docker run -i -p 2222:80 dbpedia/spotlight-english spotlight.sh```
 
-* French     - ```docker run -i -p 2225:80 dbpedia/spotligth-french spotlight.sh```
+* French     - ```docker run -i -p 2225:80 dbpedia/spotlight-french spotlight.sh```
 
-* German     - ```docker run -i -p 2226:80 dbpedia/spotligth-german spotlight.sh```
+* German     - ```docker run -i -p 2226:80 dbpedia/spotlight-german spotlight.sh```
 
-* Hungarian  - ```docker run -i -p 2229:80 dbpedia/spotligth-hungarian spotlight.sh```
+* Hungarian  - ```docker run -i -p 2229:80 dbpedia/spotlight-hungarian spotlight.sh```
 
-* Italian    - ```docker run -i -p 2230:80 dbpedia/spotligth-italian spotlight.sh```
+* Italian    - ```docker run -i -p 2230:80 dbpedia/spotlight-italian spotlight.sh```
 
-* Portuguese - ```docker run -i -p 2228:80 dbpedia/spotligth-portuguese spotlight.sh```
+* Portuguese - ```docker run -i -p 2228:80 dbpedia/spotlight-portuguese spotlight.sh```
 
-* Russian    - ```docker run -i -p 2227:80 dbpedia/spotligth-rusian spotlight.sh```
+* Russian    - ```docker run -i -p 2227:80 dbpedia/spotlight-rusian spotlight.sh```
 
-* Spanish    - ```docker run -i -p 2231:80 dbpedia/spotligth-spanish spotlight.sh```
+* Spanish    - ```docker run -i -p 2231:80 dbpedia/spotlight-spanish spotlight.sh```
 
-* Swedish    - ```docker run -i -p 2241:80 dbpedia/spotligth-swedish spotlight.sh```
+* Swedish    - ```docker run -i -p 2241:80 dbpedia/spotlight-swedish spotlight.sh```
 
-* Turkish    - ```docker run -i -p 2235:80 dbpedia/spotligth-turkish spotlight.sh```
+* Turkish    - ```docker run -i -p 2235:80 dbpedia/spotlight-turkish spotlight.sh```
 
 
 

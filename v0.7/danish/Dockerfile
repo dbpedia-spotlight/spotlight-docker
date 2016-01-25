@@ -1,14 +1,15 @@
 FROM debian:squeeze
 
-MAINTAINER DPpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.net>
+MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.net>
 
 RUN apt-get update && apt-get install -y \
     curl \
     openjdk-6-jre
 
 ENV RELEASE_SERVER    spotlight.sztaki.hu
-ENV RELEASE_FILENAME  dbpedia-spotlight-0.7.jar
+ENV RELEASE_FILENAME  dbpedia-spotlight-latest.jar
 ENV LANGUAGE_MODEL    da.tar.gz	   
+
 
 RUN mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
