@@ -2,10 +2,6 @@ FROM java:7
 
 MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.net>
 
-RUN apt-get update && apt-get install -y \
-    curl \
-    wget
-
 ENV VERSION 3.9
 ENV LANGUAGE pt
 ENV RELEASE_SERVER    spotlight.sztaki.hu
@@ -13,7 +9,11 @@ ENV MODEL_SERVER      downloads.sourceforge.net/project/dbpedia-spotlight/
 ENV RELEASE_FILENAME  dbpedia-spotlight-latest.jar
 ENV LANGUAGE_MODEL    ${LANGUAGE}_${VERSION}.tar.gz	   
 
-RUN mkdir -p /opt/spotlight && \
+
+RUN apt-get update && apt-get install -y \
+    curl \
+    wget &&
+    mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
     curl -O "http://${RELEASE_SERVER}/downloads/${RELEASE_FILENAME}" && \
     cd /
