@@ -1,6 +1,9 @@
-FROM java:openjdk-6-jre
+FROM java:7
 
 MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.net>
+
+RUN apt-get update && apt-get install -y \
+    curl 
 
 ENV RELEASE_SERVER    spotlight.sztaki.hu
 ENV RELEASE_FILENAME  dbpedia-spotlight-latest.jar

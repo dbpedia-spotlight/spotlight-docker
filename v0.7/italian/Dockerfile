@@ -1,4 +1,4 @@
-FROM debian:squeeze
+FROM java:7
 
 MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.net>
 
