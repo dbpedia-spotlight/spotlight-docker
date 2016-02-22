@@ -12,7 +12,7 @@ ENV LANGUAGE_MODEL    ${LANGUAGE}_${VERSION}.tar.gz
 
 RUN apt-get update && apt-get install -y \
     curl \
-    wget &&
+    wget && \
     mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
     curl -O "http://${RELEASE_SERVER}/downloads/${RELEASE_FILENAME}" && \
