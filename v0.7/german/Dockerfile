@@ -4,7 +4,7 @@ MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.n
 
 
 ENV RELEASE_SERVER    www.dbpedia-spotlight.com
-ENV RELEASE_FILENAME  dbpedia-spotlight-latest.jar
+ENV RELEASE_FILENAME  dbpedia-spotlight-0.7.jar
 ENV LANGUAGE_MODEL    de.tar.gz
 
 RUN mkdir -p /opt/spotlight && \

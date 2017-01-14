@@ -3,7 +3,7 @@ FROM java:openjdk-7-jre
 MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.net>
 
 ENV RELEASE_SERVER    www.dbpedia-spotlight.com
-ENV RELEASE_FILENAME  dbpedia-spotlight-latest.jar
+ENV RELEASE_FILENAME  dbpedia-spotlight-0.7.jar
 ENV LANGUAGE_MODEL    tr.tar.gz	   
 
 RUN mkdir -p /opt/spotlight && \
