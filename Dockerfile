@@ -9,9 +9,9 @@ RUN mkdir -p /mnt/dbpedia && \
     mkdir -p /mnt/dbpedia/spotlight && \
     cd /mnt/dbpedia && \
     curl -O "http://$RELEASE_SERVER/$RELEASE_FILENAME" && \
-    apt get update && \
+    apt-get update && \
     cd  /mnt/dbpedia && \
-    apt get install -y git && \
+    apt-get install -y git && \
     git clone https://github.com/dbpedia-spotlight/lucene-quickstarter.git
     
 
