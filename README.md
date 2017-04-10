@@ -53,3 +53,8 @@ If you have any problems with or questions about this image, please contact us t
 First of all, thank you for helping! :) .
 
 Please see [DBpedia Spotlight Contribute Guide](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Contributing) for details on how to contribute
+
+
+## Maintainers
+
+<a href="http://infai.org"><img src="http://infai.org/de/Presse/Logos/files?get=infai_logo_en_rgb_300dpi.jpg" align="left" height="20%" width="20%" ></a>
