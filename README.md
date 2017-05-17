@@ -5,8 +5,6 @@
 
 [DBpedia Spotlight](http://wikipedia.org/wiki/DBpedia#DBpedia_Spotlight) is a tool for automatically annotating mentions of DBpedia resources in text, providing a solution for linking unstructured information sources to the Linked Open Data cloud through DBpedia.
 
-
-
 ## How to run
 
 * Danish     - ```docker run -i -p 2240:80 dbpedia/spotlight-danish spotlight.sh```
@@ -32,8 +30,6 @@
 * Swedish    - ```docker run -i -p 2241:80 dbpedia/spotlight-swedish spotlight.sh```
 
 * Turkish    - ```docker run -i -p 2235:80 dbpedia/spotlight-turkish spotlight.sh```
-
-
 
 ## Supported Docker versions
 This image is officially supported on Docker version 1.9.1.
