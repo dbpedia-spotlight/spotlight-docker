@@ -4,12 +4,12 @@ MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.n
 
 ENV RELEASE_SERVER    downloads.dbpedia-spotlight.org
 ENV RELEASE_FILENAME  dbpedia-spotlight-0.8-beta.jar
-ENV LANGUAGE_MODEL    sv.tar.gz	 
+ENV LANGUAGE_MODEL    sv.tar.gz
 
 RUN mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
     curl -O "http://$RELEASE_SERVER/spotlight/$RELEASE_FILENAME" && \
-    curl -O "http://$RELEASE_SERVER/sv/2016-04/model/$LANGUAGE_MODEL" && \
+    curl -O "http://$RELEASE_SERVER/sv/demo/$LANGUAGE_MODEL" && \
     tar xvf $LANGUAGE_MODEL  && \
     rm  $LANGUAGE_MODEL
 
