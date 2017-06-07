@@ -9,7 +9,7 @@ ENV LANGUAGE_MODEL    hu.tar.gz
 RUN mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
     curl -O "http://$RELEASE_SERVER/spotlight/$RELEASE_FILENAME" && \
-    curl -O "http://$RELEASE_SERVER/hu/demo/$LANGUAGE_MODEL" && \
+    curl -O "http://$RELEASE_SERVER/2016-04/hu/model/$LANGUAGE_MODEL" && \
     tar xvf $LANGUAGE_MODEL  && \
     rm  $LANGUAGE_MODEL
 

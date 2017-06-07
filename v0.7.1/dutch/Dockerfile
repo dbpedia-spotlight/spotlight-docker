@@ -9,7 +9,7 @@ ENV LANGUAGE_MODEL    nl.tar.gz
 RUN mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
     curl -O "http://$RELEASE_SERVER/spotlight/$RELEASE_FILENAME" && \
-    curl -O "http://$RELEASE_SERVER/nl/demo/$LANGUAGE_MODEL" && \
+    curl -O "http://$RELEASE_SERVER/2016-04/nl/model/$LANGUAGE_MODEL" && \
     tar xvf $LANGUAGE_MODEL  && \
     rm  $LANGUAGE_MODEL
 
