@@ -1,5 +1,5 @@
 ## Supported tags and respective Dockerfile links
-* v0.7,  v0.7.1, v0.8-beta, latest 
+* 0.7,  0.7.1, 1.0, latest 
 
 
 ## What is DBpedia Spotlight?
