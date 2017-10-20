@@ -1,4 +1,4 @@
-FROM java:openjdk-7-jre
+FROM openjdk:7-jre-alpine
 
 MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.net>
 
