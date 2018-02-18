@@ -4,7 +4,7 @@ MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.n
 
 ENV RELEASE_SERVER    downloads.dbpedia-spotlight.org
 ENV RELEASE_FILENAME  dbpedia-spotlight-nightly-build.jar 
-ENV LANGUAGE_MODEL    en_2+2.tar.gz
+ENV LANGUAGE_MODEL    en.tar.gz
 
 RUN apk add --no-cache curl && \
     mkdir -p /opt/spotlight && \
