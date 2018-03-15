@@ -10,6 +10,6 @@ Run
 
 and finally
 
-    docker run -i -p 2222:80 czech_spotlight spotlight.sh
+    docker run -i -p 2253:80 czech_spotlight spotlight.sh
 
 
