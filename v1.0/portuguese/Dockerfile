@@ -2,15 +2,15 @@ FROM openjdk:8-jre-alpine
 
 MAINTAINER  DBpedia Spotlight Team <dbp-spotlight-developers@lists.sourceforge.net>
 
-ENV RELEASE_SERVER    downloads.dbpedia-spotlight.org
+ENV RELEASE_SERVER    ufpr.dl.sourceforge.net
 ENV RELEASE_FILENAME  dbpedia-spotlight-1.0.0.jar 
 ENV LANGUAGE_MODEL    pt.tar.gz
 
 RUN apk add --no-cache curl && \
     mkdir -p /opt/spotlight && \
     cd /opt/spotlight && \
-    curl -O "http://$RELEASE_SERVER/spotlight/$RELEASE_FILENAME" && \
-    curl -O "http://$RELEASE_SERVER/2016-04/pt/model/$LANGUAGE_MODEL" && \
+    curl -O "https://$RELEASE_SERVER/project/dbpedia-spotlight/spotlight/$RELEASE_FILENAME" && \
+    curl -O "https://$RELEASE_SERVER/project/dbpedia-spotlight/2016-04/pt/model/$LANGUAGE_MODEL" && \
     tar xvf $LANGUAGE_MODEL  && \
     rm  $LANGUAGE_MODEL && \
     apk del curl
