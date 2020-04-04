@@ -37,7 +37,7 @@ Please see the [Docker installation documentation](https://docs.docker.com/insta
 Documentation for this image is stored in [GitHub repo](http://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki).
 
 ## Issues
-If you have any problems with or questions about this image, please contact us through a [GitHub issue](http://github.com/dbpedia-spotlight/dbpedia-spotlight/issues).
+If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/dbpedia-spotlight/spotlight-docker/issues).
 
 ## Contributing
 
