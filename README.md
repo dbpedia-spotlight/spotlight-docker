@@ -20,7 +20,7 @@
 | **Hungarian** | ```docker run -itd --restart unless-stopped -p 2229:80 dbpedia/spotlight-hungarian spotlight.sh``` |
 | **Italian** | ```docker run -itd --restart unless-stopped -p 2230:80 dbpedia/spotlight-italian spotlight.sh``` |
 | **Portuguese** | ```docker run -itd --restart unless-stopped -p 2228:80 dbpedia/spotlight-portuguese spotlight.sh``` |
-| **Russian** | ```docker run -itd --restart unless-stopped -p 2227:80 dbpedia/spotlight-rusian spotlight.sh``` |
+| **Russian** | ```docker run -itd --restart unless-stopped -p 2227:80 dbpedia/spotlight-russian spotlight.sh``` |
 | **Spanish** | ```docker run -itd --restart unless-stopped -p 2231:80 dbpedia/spotlight-spanish spotlight.sh``` |
 | **Swedish** | ```docker run -itd --restart unless-stopped -p 2241:80 dbpedia/spotlight-swedish spotlight.sh``` |
 | **Turkish** | ```docker run -itd --restart unless-stopped -p 2235:80 dbpedia/spotlight-turkish spotlight.sh``` |
