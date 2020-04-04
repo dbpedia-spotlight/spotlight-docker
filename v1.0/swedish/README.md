@@ -10,6 +10,6 @@ Run
 
 And finally
 
-    docker run -i -p 2241:80 swedish_spotlight spotlight.sh
+    docker run -itd --restart unless-stopped -p 2241:80 swedish_spotlight spotlight.sh
 
 
