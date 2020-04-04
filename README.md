@@ -14,9 +14,9 @@
 
 | **Language** | **Command** |
 | --- | --- |
-| **Danish** | ```docker run -i -p 2240:80 dbpedia/spotlight-danish spotlight.sh``` |
-| **Dutch** | ```docker run -i -p 2232:80 dbpedia/spotlight-dutch spotlight.sh``` |
-| **English** | ```docker run -i -p 2222:80 dbpedia/spotlight-english spotlight.sh``` |
+| **Danish** | ```docker run -itd --restart unless-stopped -p 2240:80 dbpedia/spotlight-danish spotlight.sh``` |
+| **Dutch** | ```docker run -itd --restart unless-stopped -p 2232:80 dbpedia/spotlight-dutch spotlight.sh``` |
+| **English** | ```docker run -itd --restart unless-stopped -p 2222:80 dbpedia/spotlight-english spotlight.sh``` |
 | **French** | ```docker run -i -p 2225:80 dbpedia/spotlight-french spotlight.sh``` |
 | **German** | ```docker run -i -p 2226:80 dbpedia/spotlight-german spotlight.sh``` |
 | **Hungarian** | ```docker run -i -p 2229:80 dbpedia/spotlight-hungarian spotlight.sh``` |
