@@ -1,7 +1,5 @@
 ## Supported tags and respective Dockerfile links
 
-* `0.7`
-* `0.7.1`
 * `1.0`
 * `latest`
 
@@ -45,6 +43,3 @@ First of all, thank you for helping! :) .
 
 Please see [DBpedia Spotlight Contribute Guide](https://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki/Contributing) for details on how to contribute
 
-## Maintainers
-
-<a href="http://infai.org"><img src="https://infai.org/wp-content/uploads/2017/08/InfAI-Logo.png" align="left" height="20%" width="20%" >Institut für Angewandte Informatik e. V. und InfAI Management GmbH</a>
