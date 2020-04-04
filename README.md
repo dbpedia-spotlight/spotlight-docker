@@ -17,15 +17,15 @@
 | **Danish** | ```docker run -itd --restart unless-stopped -p 2240:80 dbpedia/spotlight-danish spotlight.sh``` |
 | **Dutch** | ```docker run -itd --restart unless-stopped -p 2232:80 dbpedia/spotlight-dutch spotlight.sh``` |
 | **English** | ```docker run -itd --restart unless-stopped -p 2222:80 dbpedia/spotlight-english spotlight.sh``` |
-| **French** | ```docker run -i -p 2225:80 dbpedia/spotlight-french spotlight.sh``` |
-| **German** | ```docker run -i -p 2226:80 dbpedia/spotlight-german spotlight.sh``` |
-| **Hungarian** | ```docker run -i -p 2229:80 dbpedia/spotlight-hungarian spotlight.sh``` |
-| **Italian** | ```docker run -i -p 2230:80 dbpedia/spotlight-italian spotlight.sh``` |
-| **Portuguese** | ```docker run -i -p 2228:80 dbpedia/spotlight-portuguese spotlight.sh``` |
-| **Russian** | ```docker run -i -p 2227:80 dbpedia/spotlight-rusian spotlight.sh``` |
-| **Spanish** | ```docker run -i -p 2231:80 dbpedia/spotlight-spanish spotlight.sh``` |
-| **Swedish** | ```docker run -i -p 2241:80 dbpedia/spotlight-swedish spotlight.sh``` |
-| **Turkish** | ```docker run -i -p 2235:80 dbpedia/spotlight-turkish spotlight.sh``` |
+| **French** | ```docker run -itd --restart unless-stopped -p 2225:80 dbpedia/spotlight-french spotlight.sh``` |
+| **German** | ```docker run -itd --restart unless-stopped -p 2226:80 dbpedia/spotlight-german spotlight.sh``` |
+| **Hungarian** | ```docker run -itd --restart unless-stopped -p 2229:80 dbpedia/spotlight-hungarian spotlight.sh``` |
+| **Italian** | ```docker run -itd --restart unless-stopped -p 2230:80 dbpedia/spotlight-italian spotlight.sh``` |
+| **Portuguese** | ```docker run -itd --restart unless-stopped -p 2228:80 dbpedia/spotlight-portuguese spotlight.sh``` |
+| **Russian** | ```docker run -itd --restart unless-stopped -p 2227:80 dbpedia/spotlight-rusian spotlight.sh``` |
+| **Spanish** | ```docker run -itd --restart unless-stopped -p 2231:80 dbpedia/spotlight-spanish spotlight.sh``` |
+| **Swedish** | ```docker run -itd --restart unless-stopped -p 2241:80 dbpedia/spotlight-swedish spotlight.sh``` |
+| **Turkish** | ```docker run -itd --restart unless-stopped -p 2235:80 dbpedia/spotlight-turkish spotlight.sh``` |
 
 ## Supported Docker versions
 This image is officially supported on Docker version **`1.9.1`**.

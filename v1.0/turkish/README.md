@@ -10,6 +10,6 @@ Run
 
 And finally
 
-    docker run -i -p 2235:80 turkish_spotlight spotlight.sh
+    docker run -itd --restart unless-stopped -p 2235:80 turkish_spotlight spotlight.sh
 
 

@@ -10,6 +10,6 @@ Run
 
 and finally
 
-    docker run -i -p 2230:80 italian_spotlight spotlight.sh
+    docker run -itd --restart unless-stopped -p 2230:80 italian_spotlight spotlight.sh
 
 
