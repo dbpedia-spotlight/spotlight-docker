@@ -1,0 +1,56 @@
+version: '3.5'    
+services:
+  spotlight.en:
+    image: dbpedia/spotlight-multilingual-databus
+    container_name: dbpedia-spotlight.en
+    volumes:
+       - spotlight-models:/opt/spotlight/models
+    restart: unless-stopped   
+    ports:
+       - "0.0.0.0:2223-2250:80"  
+    networks:
+       - spotlight-net
+    command: /bin/spotlight.sh en
+    
+  spotlight.de:
+    image: dbpedia/spotlight-multilingual-databus
+    container_name: dbpedia-spotlight.de
+    volumes:
+       - spotlight-models:/opt/spotlight/models
+    restart: unless-stopped   
+    ports:
+       - "0.0.0.0:2223-2250:80"  
+    networks:
+       - spotlight-net
+    command: /bin/spotlight.sh de
+    
+  spotlight.pt:
+    image: dbpedia/spotlight-multilingual-databus
+    container_name: dbpedia-spotlight.pt
+    volumes:
+       - spotlight-models:/opt/spotlight/models
+    restart: unless-stopped   
+    ports:
+       - "0.0.0.0:2223-2250:80"  
+    networks:
+       - spotlight-net
+    command: /bin/spotlight.sh pt
+  
+  web:
+    image: dbpedia/spotlight-demo
+    container_name: spotlight-demo
+    ports:
+      - "0.0.0.0:2222:80"
+    volumes:
+      - ./sites.xml:/var/www/html/config/sites.xml
+    networks:
+        - spotlight-net
+
+networks:
+    spotlight-net:
+        name: spotlight-net
+        driver: bridge
+
+volumes:
+  spotlight-models:
+    external: true
