@@ -11,7 +11,7 @@ RUN apk update && \
     apk add --no-cache curl
 
 # downloading spolight model and dbpedia spotlight
-RUN mkdir -p /opt/spotlight && \ 
+RUN mkdir -p /opt/spotlight/models && \ 
     cd /opt/spotlight && \
     wget -O dbpedia-spotlight.jar $SPOTLIGHT
 
