@@ -4,7 +4,7 @@ services:
     image: dbpedia/dbpedia-spotlight
     container_name: dbpedia-spotlight.en
     volumes:
-       - spotlight-models:/opt/spotlight/models
+       - spotlight-model:/opt/spotlight/models
     restart: unless-stopped   
     ports:
        - "0.0.0.0:2222:80"  
@@ -14,7 +14,7 @@ services:
     image: dbpedia/dbpedia-spotlight
     container_name: dbpedia-spotlight.de
     volumes:
-       - spotlight-models:/opt/spotlight/models
+       - spotlight-model:/opt/spotlight/models
     restart: unless-stopped   
     ports:
        - "0.0.0.0:2223:80"  
@@ -24,12 +24,12 @@ services:
     image: dbpedia/dbpedia-spotlight
     container_name: dbpedia-spotlight.pt
     volumes:
-       - spotlight-models:/opt/spotlight/models
+       - spotlight-model:/opt/spotlight/models
     restart: unless-stopped   
     ports:
        - "0.0.0.0:2224:80"  
     command: /bin/spotlight.sh pt
   
 volumes:
-  spotlight-models:
+  spotlight-model:
     external: true
