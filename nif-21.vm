@@ -1,0 +1,28 @@
+{
+    "@context": "$contextJSON",
+    "@graph" : [
+#foreach( $bean in $beans)
+             {
+             #if($bean.nifType == "CONTEXT")
+             "@id" : "$bean.referenceContextId",
+             "@type" : [ "Context", "OffsetBasedString" ],
+             "beginIndex" : $bean.context.beginIndex,
+             "endIndex" : $bean.context.endIndex,
+             "isString" : "$bean.mention.trim()"
+             #end
+            #if($bean.nifType == "ENTITY")
+            "@id":  "$bean.context.NIF21id",
+            "@type": "Annotation",
+            "taAnnotatorsRef" : "$bean.annotator",
+            "taClassRef": [ #foreach ($type in $bean.types)"$type"#if( $foreach.hasNext ),#end#end],
+            "taConfidence": $bean.score,
+            "taIdentRef": "$bean.taIdentRef",
+            "beginIndex": "$bean.beginIndex",
+            "endIndex": "$bean.endIndex",
+            "referenceContext": "$bean.referenceContextId"#if($bean.taClassRef),
+            "taMsClassRef":[#foreach ($type in $bean.taClassRef)"$type"#if( $foreach.hasNext ),#end#end]#end
+            #end}#if( $foreach.hasNext )
+            ,#end
+          #end
+    ]
+}
