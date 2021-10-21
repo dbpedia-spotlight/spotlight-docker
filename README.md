@@ -1,10 +1,8 @@
 # What is DBpedia Spotlight?
 
-[DBpedia Spotlight](http://wikipedia.org/wiki/DBpedia#DBpedia_Spotlight) is a tool for automatically annotating mentions of DBpedia resources in text, providing a solution for linking unstructured information sources to the Linked Open Data cloud through DBpedia.
+[DBpedia Spotlight](https://www.dbpedia-spotlight.org/) is a tool for automatically annotating mentions of DBpedia resources in text, providing a solution for linking unstructured information sources to the Linked Open Data cloud through DBpedia.
 
-The dbpedia/spotlight-multilingual-databus is a docker image to run the DBpedia Spotlight server with the most recent language models, downloaded from the [DBpedia Databus repository](https://databus.dbpedia.org/dbpedia/spotlight/spotlight-model/), e.g., English (en), German (nl), Italian (it), etc. 
-
-The following are the instructions to run a DBpedia Spotlight service for one or more language models, the port number must be changed if more than one service is run.
+The dbpedia/dbpedia-spotlight is a docker image to run the DBpedia Spotlight service with the most recent language models, downloaded from the [DBpedia Databus repository](https://databus.dbpedia.org/dbpedia/spotlight/spotlight-model/), e.g., English (en), German (nl), Italian (it), etc. 
 
 # Available language models + quick-start command
 
@@ -52,17 +50,43 @@ Any of the following commands could be use to stop the DBpedia Spotlight service
 
 The `docker kill` command will stop the running container and the `docker rm` command will remove the container. The `dbpedia-spotlight` corresponds to the name given with the `--name` option of the docker run command.
 
-# Another options to run DBpedia Spotlight
+# Additional options to run DBpedia Spotlight
 
-## docker-compose
+## Run a single DBpedia Spotlight service (bash command)
+
+This option could be used to persist the configuration used to run a DBpedia Spotlight service. It is recommended, but not restricted, to run a single DBpedia Spotlight service whose configuration differs from the default presented in the top table. 
+
+1. Save the following code into a bash file (for example, `english-spotlight.sh`)
+
+```
+LANG=en
+# Available languages: ca, da, de, en, es, fi, fr, hu, it, lt, nl, no, pt, ro, ru, sv, tr
+
+# Create a volume to persist models
+docker volume create spotlight-model
+
+#Run docker image
+docker run -tid \
+ --restart unless-stopped \
+ --name dbpedia-spotlight.$LANG \
+ --mount source=spotlight-model,target=/opt/spotlight \
+ -p 2222:80 \
+ dbpedia/dbpedia-spotlight \
+ spotlight.sh $LANG   
+```
+
+2. Grant execute permission to the file
+`chmod a+x english-spotlight.sh`
+3. Execute the bash file
+`./english-spotlight.sh`
+
+## Run one or more DBpedia Spotlight services (docker-compose)
 
 [Docker-compose](https://docs.docker.com/compose/#:~:text=Compose%20is%20a%20tool%20for,the%20services%20from%20your%20configuration) is a tool to run multiple containers as a single service. It is based on the data sarialization language YAML to define the configuration for one or multiple services. 
 
 Docker-compose could be used to define and run more than one DBpedia Spotlight service. The following instructions explain how to create a YAML configuration file to run a single DBpedia Spotlight service. A YAML configuration file example for multiple DBpedia Spotlight services is available [here](https://raw.githubusercontent.com/dbpedia/spotlight-docker/multilingual/spotlight-compose.yml).
 
-1.[OPTIONAL] Create a volume to persist models
-        docker volume create spotlight-model
-2. Create a Docker Compose file:
+1. Create a Docker Compose file:
 
    The docker compose file (for example, `spotlight-compose.yml`) defines one or more DBpedia Spotlight services through the following configuration block:
 
@@ -89,7 +113,7 @@ version '3.5'
  - `[LANG]`: is a two digits code to define the language model. The available language models are: ca, da, de, en, es, fi, fr, hu, it, lt, nl, no, pt, ro, ru, sv, tr.
  - `[DOCKER-IMAGE]`: the name of the docker image.
 
- 3. Run Docker Compose file
+ 2. Run Docker Compose file
 
         docker-compose -f spotlight-compose.yml up -d
 
@@ -124,37 +148,6 @@ The following command could be use to stop the DBpedia Spotlight service:
    
 The `stop` instruction will stop the running containers. The `spotlight-compose.yml` corresponds to the file name used to run the compose file. 
 
-
-## Bash file
-
-A bash file is an option to persist the configuration used to run a DBpedia Spotlight service. This option is recommended, but not restricted, to run a single DBpedia Spotlight service whose structure differs from the default presented in the top table.  
-
-
-1. Save the following code into a bash file (for example, `english-spotlight.sh`)
-
-```
-LANG=en
-# Available languages: ca, da, de, en, es, fi, fr, hu, it, lt, nl, no, pt, ro, ru, sv, tr
-
-# Create a volume to persist models
-docker volume create spotlight-model
-
-#Run docker image
-docker run -tid \
- --restart unless-stopped \
- --name dbpedia-spotlight.$LANG \
- --mount source=spotlight-model,target=/opt/spotlight \
- -p 2222:80 \
- dbpedia/dbpedia-spotlight \
- spotlight.sh $LANG   
-```
-
-2. Grant execute permission to the file
-`chmod a+x english-spotlight.sh`
-3. Execute the bash file
-`./english-spotlight.sh`
-
-
 # Monitor DBpedia Spotlight service(s) through Docker commands
     
 The following docker commands could be used to show some information about the dbpedia-spotlight image: 
@@ -178,4 +171,3 @@ Please see the [Docker installation documentation](https://docs.docker.com/insta
 # Documentation
 
 Documentation for this image is stored in [GitHub repo](http://github.com/dbpedia-spotlight/dbpedia-spotlight/wiki).
-
