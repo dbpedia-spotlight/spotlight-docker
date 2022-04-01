@@ -4,6 +4,9 @@
 
 The dbpedia/dbpedia-spotlight is a docker image to run the DBpedia Spotlight service with the most recent language models, downloaded from the [DBpedia Databus repository](https://databus.dbpedia.org/dbpedia/spotlight/spotlight-model/), e.g., English (en), German (nl), Italian (it), etc. 
 
+# Run on Kubernetes
+
+For instructions and files on how to run DBpedia Spotlight on Kubernetes check out the kubernetes directory.
 # Available language models + quick-start command
 
 The following table shows the available language models and the command line to start the DBpedia Spotlight service. The `--mount source=spotlight-model...` will automatically creates the `spotlight-model` volume. 
@@ -154,6 +157,7 @@ The following docker commands could be used to show some information about the d
 
 - `docker logs dbpedia-spotlight.[LANG]` : Displays the log information for the corresponding service
 - `docker stats dbpedia-spotlight.[LANG]` :  Shows the statistics (e.g., the amount of memory and CPU) for the corresponding service
+
 
 # Troubleshooting
 
