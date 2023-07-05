@@ -18,8 +18,8 @@ then
      fi
 
 else
-      QUERY="PREFIX dataid: <http://dataid.dbpedia.org/ns/core#>
-      PREFIX dataid-cv: <http://dataid.dbpedia.org/ns/cv#>
+      QUERY="PREFIX dataid: <https://dataid.dbpedia.org/databus#>
+      PREFIX dataid-cv: <https://dataid.dbpedia.org/databus-cv#>
       PREFIX dct: <http://purl.org/dc/terms/>
       PREFIX dcat:  <http://www.w3.org/ns/dcat#>
 
@@ -34,12 +34,12 @@ else
 				?dataset dct:hasVersion ?version . 
 			} ORDER BY DESC (?version) LIMIT 1 
 		}
-                ?distribution dataid:contentVariant '$LANG'^^xsd:string . 
+                ?distribution dataid-cv:lang '$LANG' . 
 	}
 	?distribution dcat:downloadURL ?file .
        }"
 
-      RESULT=`curl --data-urlencode query="$QUERY" --data-urlencode format="text/tab-separated-values" https://databus.dbpedia.org/repo/sparql | sed 's/"//g' | grep -v "^file$" | head -n 1 `
+      RESULT=`curl -X 'POST' 'https://databus.dbpedia.org/sparql' -H 'accept: text/tab-separated-values' -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode query="$QUERY" | sed 's/"//g' | grep -v "^file$" | head -n 1`
       echo $RESULT
       curl -O  $RESULT
       tar -C /opt/spotlight/models -xvf spotlight-model_lang=$LANG.tar.gz
