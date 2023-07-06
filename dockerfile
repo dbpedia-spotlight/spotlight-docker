@@ -8,7 +8,8 @@ ENV SPOTLIGHT  https://sourceforge.net/projects/spotlight-multilingual-docker/fi
 RUN apk update && \
     apk add bash && \
     apk add tshark && \
-    apk add --no-cache curl
+    apk add --no-cache curl && \
+    apk upgrade curl
 
 # downloading spolight model and dbpedia spotlight
 RUN mkdir -p /opt/spotlight/models && \ 

@@ -39,7 +39,7 @@ else
 	?distribution dcat:downloadURL ?file .
        }"
 
-      RESULT=`curl -X 'POST' 'https://databus.dbpedia.org/sparql' -H 'accept: text/tab-separated-values' -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode query="$QUERY" | sed 's/"//g' | grep -v "^file$" | head -n 1`
+      RESULT=`curl --data-urlencode query="$QUERY" -H 'accept:text/tab-separated-values' https://databus.dbpedia.org/sparql | sed 's/"//g' | grep -v "^file$" | head -n 1`
       echo $RESULT
       curl -O  $RESULT
       tar -C /opt/spotlight/models -xvf spotlight-model_lang=$LANG.tar.gz
