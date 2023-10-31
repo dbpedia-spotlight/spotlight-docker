@@ -41,7 +41,7 @@ else
 
       RESULT=`curl --data-urlencode query="$QUERY" -H 'accept:text/tab-separated-values' https://databus.dbpedia.org/sparql | sed 's/"//g' | grep -v "^file$" | head -n 1`
       echo $RESULT
-      curl -O  $RESULT
+      curl -LO  $RESULT
       tar -C /opt/spotlight/models -xvf spotlight-model_lang=$LANG.tar.gz
       rm spotlight-model_lang=$LANG.tar.gz
       echo "/opt/spotlight/models/$LANG http://0.0.0.0:80/rest/"
