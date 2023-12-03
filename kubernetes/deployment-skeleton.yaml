@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbpedia-spotlight-LANGUAGE
+  namespace: dbpedia
+  labels:
+    app.kubernetes.io/instance: dbpedia
+spec:
+  selector:
+    matchLabels:
+      app: dbpedia-spotlight-LANGUAGE
+  template:
+    metadata:
+      labels:
+        app: dbpedia-spotlight-LANGUAGE
+    spec:
+      initContainers: #check if language file is downloaded and download it if not
+      - name: init-data
+        image: busybox:1.28
+        command: ['sh', '-c', 'if [[ -f /opt/spotlight/models/LANGUAGE ]]; then echo "file exists on your filesystem." else; curl -L -o /downloads/spotlight-model_lang=LANGUAGE.tar.gz  "https://databus.dbpedia.org/dbpedia/spotlight/spotlight-model/2021.12.01/spotlight-model_lang=LANGUAGE.tar.gz";tar -xvzf spotlight-model_lang=LANGUAGE.tar.gz -C /opt/spotlight/models; fi']
+      containers:
+      - args:
+        - spotlight.sh
+        - LANGUAGE
+        name: dbpedia-spotlight-LANGUAGE
+        image: dbpedia/dbpedia-spotlight
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: /opt/spotlight/models
+          name: dbpedia-LANGUAGE
+        - mountPath: /downloads 
+          name: downloads
+        resources:
+          limits:
+            memory: "3Gi"
+            cpu: "300m"
+          requests:
+            memory: "1Gi"
+            cpu: "10m"
+        securityContext:
+          readOnlyRootFilesystem : false #change to true after the language file is downloaded and re-apply
+        ports:
+        - containerPort: 2222
+          name: dbpediaport
+        livenessProbe: #keeps the endpoint alive, else the first request will take some time to respond
+          httpGet:
+            port: 80
+            path: /rest/application.wadl
+          initialDelaySeconds: 60
+          periodSeconds: 20
+      restartPolicy: Always
+      volumes:
+      - name: dbpedia-LANGUAGE
+        persistentVolumeClaim:
+          claimName: dbpedia-LANGUAGE
+      - name: downloads
+        emptyDir: {}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 100% # all unavailable, because PVC is readwriteonce, new pod won't start because it can't connect to pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dbpedia-spotlight-LANGUAGE
+  namespace: dbpedia
+spec:
+  selector:
+    app: dbpedia-spotlight-LANGUAGE
+  ports:
+  - port: 2222
+    targetPort: 80
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dbpedia-LANGUAGE
+  namespace: dbpedia
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
